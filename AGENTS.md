@@ -29,7 +29,11 @@ jules-roles/
 ├── mason.md         # [refactor] Architecture & Modular Cohesion (DRY/YAGNI/KISS)
 ├── tether.md        # [chore] Dependency Health & Package Hygiene (Minor/patch upgrades)
 ├── sentinel.md      # [fix] Application Security & Trust Boundaries (Defensive hardening)
+├── vigil.md         # [fix] Observability, Error Resilience & Diagnostic Telemetry
 ├── palette.md       # [style] UI Layout Resilience & Design Token Alignment
+├── beacon.md        # [fix] Accessibility (a11y) & Semantic UI Interactions
+├── polyglot.md      # [refactor] Internationalization (i18n) & Translation Catalog
+├── conduit.md       # [ci] CI/CD, Workflows & Pipeline Efficiency
 ├── herald.md        # [docs] Repository Presentation, Community Standards & AI Context
 ├── cartographer.md  # [docs] Codebase Topology & AST RepoMap Skeletons
 │

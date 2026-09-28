@@ -20,6 +20,10 @@ A curated library of persona configurations for **Jules** (Google's asynchronous
 | [Tether](tether.md) | 🧹 | Dependency Health & Package Hygiene | Upgrades safe minor/patch dependencies and prunes orphaned packages | `.jules/tether.md` | Manifest & Lockfile Outdated Inspection | Conventional Commits (`chore(deps): ...`) |
 | [Sentinel](sentinel.md) | 🛡️ | Application Security & Hardening | Audits trust boundaries, prevents data leaks, and fixes vulnerabilities | `.jules/sentinel.md` | Filesystem LRU Directory Traversal | Conventional Commits (`fix(<scope>): ...`) |
 | [Palette](palette.md) | 🎨 | UI Resilience & Visual Consistency | Solves layout brittleness, viewport breakdown, and design token drift | `.jules/palette.md` | Filesystem LRU Directory Traversal | Conventional Commits (`style(<scope>): ...`) |
+| [Beacon](beacon.md) | 🔦 | Accessibility & Semantic UI | Eliminates inaccessible interactions, keyboard traps, and unlabeled controls | `.jules/beacon.md` | Filesystem LRU Directory Traversal | Conventional Commits (`fix(<scope>): ...`) |
+| [Polyglot](polyglot.md) | 🌐 | Internationalization & Translation | Extracts hardcoded UI text into localized translation catalogs | `.jules/polyglot.md` | Filesystem LRU Directory Traversal | Conventional Commits (`refactor(<scope>): ...`) |
+| [Vigil](vigil.md) | 📡 | Observability & Error Resilience | Preserves error causes and eliminates silent swallowed exceptions | `.jules/vigil.md` | Filesystem LRU Directory Traversal | Conventional Commits (`fix(<scope>): ...`) |
+| [Conduit](conduit.md) | ⚡ | CI/CD & Pipeline Efficiency | Adds execution timeouts, build caching, and concurrency cancellation | `.jules/conduit.md` | Workflow & Pipeline Inspection | Conventional Commits (`ci(<workflow>): ...`) |
 | [Mason](mason.md) | 🧱 | Architecture & Modular Cohesion | Balances DRY/YAGNI/KISS, decomposes God files without micro-file sprawl | `.jules/mason.md` | Filesystem LRU Directory Traversal | Conventional Commits (`refactor(<scope>): ...`) |
 | [Herald](herald.md) | 🎺 | Repository Presentation & AI Context | GitHub community standards (README, Contributing, Sponsors) & lean AGENTS.md | `.jules/herald.md` | Root & .github/ Inspection | Conventional Commits (`docs(repo): ...`) |
 | [Cartographer](cartographer.md) | 🗺️ | Codebase Topology & AST RepoMap | Generates high-density, signature-only outlines (90% token reduction) | `.jules/cartographer.md` | Filesystem LRU Directory Traversal | Conventional Commits (`docs(map): ...`) |
@@ -99,3 +103,19 @@ Use [`TEMPLATE.md`](TEMPLATE.md) as the starting blueprint:
 2. **Define Persona & Moniker:** Choose an evocative noun name and emoji.
 3. **Define the Core Evaluative Question:** Craft a single, rigorous first-principles question for your domain. **Do not include parenthetical lists of file types or patterns.**
 4. **Set Up the Journal Path:** Point the journal to `.jules/<role-slug>.md` with the LRU traversal rule enabled.
+
+---
+
+## 🤖 Universal Agent Compatibility
+
+While designed around Google Jules, these roles are model- and agent-agnostic. The Zero-Anchor traversal architecture prevents LLM fixation across Gemini, Claude, and OpenAI models alike.
+
+| Tool / Environment | Drop-in Execution Method |
+| :--- | :--- |
+| **Google Jules** | Provide the role file as the task description / prompt for scheduled or on-demand runs. |
+| **Claude Code** | Run directly from the terminal:<br>`claude "Execute craftsman.md against this repository"` |
+| **Cursor (Composer / Agent)** | Add as a rule in `.cursor/rules/<role>.mdc` or prompt Composer:<br>`"Act as Scribe. Read .jules/scribe.md and execute your audit."` |
+| **GitHub Copilot** | Reference role instructions in `.github/copilot-instructions.md`. |
+| **Aider** | Run with the role file as system instructions:<br>`aider --message-file craftsman.md` |
+| **Scheduled CI (GitHub Actions)** | Run a nightly workflow using an agent CLI to produce an atomic, automated PR every morning. |
+

@@ -34,6 +34,7 @@ jules-roles/
 ├── beacon.md        # [fix] Accessibility (a11y) & Semantic UI Interactions
 ├── polyglot.md      # [refactor] Internationalization (i18n) & Translation Catalog
 ├── conduit.md       # [ci] CI/CD, Workflows & Pipeline Efficiency
+├── thrift.md        # [perf] Edge Resource, Caching & Data Access Efficiency
 ├── herald.md        # [docs] Repository Presentation, Community Standards & AI Context
 ├── cartographer.md  # [docs] Codebase Topology & AST RepoMap Skeletons
 │

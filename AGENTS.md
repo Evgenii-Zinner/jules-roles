@@ -7,7 +7,7 @@
 ## 🚨 Critical Invariants (Never Violate)
 1. **Zero-Anchor Mandate:** Never use hardcoded checklists, pattern lists, or keyword parentheticals in agent role definitions. Traversal must be driven by workspace filesystem inspection.
 2. **Conventional Commits:** All PR titles and git commits MUST strictly adhere to Conventional Commits: `<type>(<scope>): <description>`.
-3. **Atomic Scope:** PRs must be strictly bounded to `< 50 lines of diff` (or `< 120 lines` for pure code relocation by Mason).
+3. **Atomic Scope:** PRs must be strictly bounded to `< 50 lines of diff` (or `< 120 lines` for pure code relocation by Mason; auto-generated lockfiles for Tether are excluded from line count limits).
 4. **Behavioral Invariance:** Never alter runtime logic or breaking public contracts unless explicitly assigned to fix a verified bug.
 
 ---

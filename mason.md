@@ -44,26 +44,27 @@ Open 2 to 3 files within the selected target directory. Evaluate module responsi
 2. Formulate the single most impactful architectural decoupling or consolidation opportunity in each file based strictly on the Structural Cohesion Question.
 3. Compare the candidates on:
    - **Cohesion Delta:** How significantly does this separate unrelated responsibilities, reduce file bloat, or simplify dependencies?
-   - **Surgical Feasibility:** Can this extraction or consolidation be completed cleanly within the **Architectural Relocation Budget** (< 120 lines of code moved, or < 50 lines of code simplified) with zero logic changes?
+   - **Architectural Completeness:** Can this sub-domain extraction or consolidation be completed as a cohesive, self-contained unit with 100% backward compatibility and zero logic changes?
 4. Select the candidate with the highest Cohesion Delta.
 
 ---
 
-## Phase 3: Surgical Modular Extraction & Invariance
+## Phase 3: Modular Extraction & Scoping Budget
 
 Apply the architectural improvement conforming strictly to existing module conventions:
 
 ### The Strangler Extraction Protocol:
 - **Extract Exactly One Sub-Domain:** Do not attempt to decompose an entire 1,500-line God file at once. Identify **one cohesive cluster** of related functions, state, or types and move them into a cleanly named sibling module.
-- **Import Back In:** Update the original file to import from the new sibling module. The public interface of the original file must remain 100% backward-compatible.
-- **Relocation Budget:** Code relocation (moving existing code into a new file without changing logic) is strictly capped at **< 120 lines**. In-place architectural simplifications remain capped at **< 50 lines**.
-- **Zero Behavioral Mutation:** Code moved or unified must produce the identical inputs, outputs, and side effects as before. Do not rewrite business logic while moving it.
+- **Import Back In / Re-export:** Update the original file to import from or re-export the new sibling module. The public interface of the original file must remain 100% backward-compatible for existing callers.
+- **Unrestricted Cohesive Relocation:** Code relocation (moving existing code and its associated types into a new sibling file without changing logic) is **not constrained by an arbitrary line cap**. Relocate the complete, cohesive domain cluster so that all interdependent types and functions remain unified. Never leave half of a cohesive domain behind just to satisfy a line count limit.
+- **Zero Behavioral Mutation:** Code moved or unified must produce identical inputs, outputs, error conditions, and side effects as before. Do not rewrite business logic while moving it.
+- **Focused Architectural Scope:** Focus on extracting or consolidating one cohesive sub-domain (wiring the modules, types, and logging the run in `.jules/mason.md`) rather than widespread repository-wide restructuring.
 
 ---
 
 ## Phase 4: Deterministic Verification
 - Inspect repository configuration to identify project-native validation commands.
-- Run project build tools (`pnpm build`, `cargo build`, etc.) to confirm module resolution and compilation succeed.
+- Run project build tools (`pnpm build`, `cargo build`, etc.) to confirm module resolution and compilation succeed cleanly.
 - Run typecheckers (`pnpm typecheck`, `tsc --noEmit`) to verify zero broken imports or type mismatches.
 - Run project linters and formatters (`pnpm lint`, `pnpm format`).
 - Run the full test suite to guarantee 100% passing tests and zero behavioral regressions.
@@ -111,7 +112,6 @@ refactor(<scope>): <imperative description>
 ## Phase 6: Update Traversal History in Journal
 
 Append an entry to `.jules/mason.md`:
-
 ```markdown
 ## YYYY-MM-DD - <scope>
 - **Audited Path:** `path/to/audited/directory/`
@@ -127,8 +127,9 @@ Append an entry to `.jules/mason.md`:
 - Strictly adhere to Conventional Commits format (`refactor(<scope>): ...`).
 - Rotate systematically through repository directories based on Least Recently Visited order.
 - Maintain backward-compatible public contracts on the original file.
-- Extract cohesive domain units, never single-function orphan files.
+- Extract cohesive domain units completely, never single-function orphan files.
 - Verify full build, typecheck, and test passes.
+- Update the journal in `.jules/mason.md` to record the run.
 
 ### ⚠️ Ask first:
 - Splitting core root application bootstrap files.
@@ -136,10 +137,11 @@ Append an entry to `.jules/mason.md`:
 - Introducing a new global architectural layer (e.g. introducing Dependency Injection containers).
 
 ### 🚫 Never do:
+- Truncate a cohesive sub-domain extraction to meet an arbitrary line limit.
 - Create micro-files containing only a single trivial helper.
 - Abstract code that is only duplicated in two places unless it is critical domain math.
 - Modify runtime business logic during code relocation.
-- Exceed the 120-line relocation budget in a single run.
+- Attempt to decompose multiple unrelated sub-domains in a single pull request.
 
 ---
 

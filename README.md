@@ -11,23 +11,23 @@ A curated library of persona configurations for **Jules** (Google's asynchronous
 
 ## 📚 Active Roles
 
-| Role | Emoji | Focus Area | Primary Objective | Journal Path | Traversal Strategy | Standard |
-| :--- | :---: | :--- | :--- | :--- | :--- | :--- |
-| [Scribe](scribe.md) | 📝 | Conventional Docs & Specs | Eliminates information asymmetry across codebase subsystems | `.jules/scribe.md` | Filesystem LRU Directory Traversal | Conventional Commits + TSDoc/Google Docstrings |
-| [Validator](validator.md) | 🧪 | QA & Test Assertion Integrity | Eliminates coverage theater and verifies unasserted boundaries | `.jules/validator.md` | Filesystem LRU Directory Traversal | Conventional Commits (`test(<scope>): ...`) + AAA |
-| [Craftsman](craftsman.md) | 🛠️ | Clean Code & Structural Refactoring | Reduces cyclomatic complexity, dead code, and cognitive friction | `.jules/craftsman.md` | Filesystem LRU Directory Traversal | Conventional Commits (`refactor(<scope>): ...`) |
-| [Prism](prism.md) | 💎 | Type Safety & Contract Integrity | Eliminates `any`, type escapes, and loose interface definitions | `.jules/prism.md` | Filesystem LRU Directory Traversal | Conventional Commits (`refactor(<scope>): ...`) |
-| [Tether](tether.md) | 🧹 | Dependency Health & Package Hygiene | Upgrades safe minor/patch dependencies and prunes orphaned packages | `.jules/tether.md` | Manifest & Lockfile Outdated Inspection | Conventional Commits (`chore(deps): ...`) |
-| [Sentinel](sentinel.md) | 🛡️ | Application Security & Hardening | Audits trust boundaries, prevents data leaks, and fixes vulnerabilities | `.jules/sentinel.md` | Filesystem LRU Directory Traversal | Conventional Commits (`fix(<scope>): ...`) |
-| [Palette](palette.md) | 🎨 | UI Resilience & Visual Consistency | Solves layout brittleness, viewport breakdown, and design token drift | `.jules/palette.md` | Filesystem LRU Directory Traversal | Conventional Commits (`style(<scope>): ...`) |
-| [Beacon](beacon.md) | 🔦 | Accessibility & Semantic UI | Eliminates inaccessible interactions, keyboard traps, and unlabeled controls | `.jules/beacon.md` | Filesystem LRU Directory Traversal | Conventional Commits (`fix(<scope>): ...`) |
-| [Polyglot](polyglot.md) | 🌐 | Internationalization & Translation | Extracts hardcoded UI text into localized translation catalogs | `.jules/polyglot.md` | Filesystem LRU Directory Traversal | Conventional Commits (`refactor(<scope>): ...`) |
-| [Vigil](vigil.md) | 📡 | Observability & Error Resilience | Preserves error causes and eliminates silent swallowed exceptions | `.jules/vigil.md` | Filesystem LRU Directory Traversal | Conventional Commits (`fix(<scope>): ...`) |
-| [Conduit](conduit.md) | ⚡ | CI/CD & Pipeline Efficiency | Adds execution timeouts, build caching, and concurrency cancellation | `.jules/conduit.md` | Workflow & Pipeline Inspection | Conventional Commits (`ci(<workflow>): ...`) |
-| [Thrift](thrift.md) | 🪙 | Resource & Read Efficiency | Eliminates unneeded reads, optimizes caching, and bounds data queries | `.jules/thrift.md` | Filesystem LRU Directory Traversal | Conventional Commits (`perf(<scope>): ...`) |
-| [Mason](mason.md) | 🧱 | Architecture & Modular Cohesion | Balances DRY/YAGNI/KISS, decomposes God files without micro-file sprawl | `.jules/mason.md` | Filesystem LRU Directory Traversal | Conventional Commits (`refactor(<scope>): ...`) |
-| [Herald](herald.md) | 🎺 | Repository Presentation & AI Context | GitHub community standards (README, Contributing, Sponsors) & lean AGENTS.md | `.jules/herald.md` | Root & .github/ Inspection | Conventional Commits (`docs(repo): ...`) |
-| [Cartographer](cartographer.md) | 🗺️ | Codebase Topology & AST RepoMap | Generates high-density, signature-only outlines (90% token reduction) | `.jules/cartographer.md` | Filesystem LRU Directory Traversal | Conventional Commits (`docs(map): ...`) |
+| Role | Focus Area | Primary Objective | Journal Path | Traversal Strategy | Standard |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [Scribe](scribe.md) | Full-File Source Code Specs | Fully documents entire source files with native docstrings (TSDoc/Google/Rustdoc) | `.jules/scribe.md` | Filesystem LRU Directory Traversal | Conventional Commits + TSDoc/Google Docstrings |
+| [Validator](validator.md) | QA & Full Test File Authoring | Authors full test files with mocks and eliminates hollow coverage across unasserted boundaries | `.jules/validator.md` | Filesystem LRU Directory Traversal | Conventional Commits (`test(<scope>): ...`) + AAA |
+| [Craftsman](craftsman.md) | Clean Code & Structural Refactoring | Reduces cognitive complexity and flattens nested branching across cohesive logical units | `.jules/craftsman.md` | Filesystem LRU Directory Traversal | Conventional Commits (`refactor(<scope>): ...`) |
+| [Prism](prism.md) | Type Safety & Contract Integrity | Eliminates `any`, type escapes, and loose interface definitions | `.jules/prism.md` | Filesystem LRU Directory Traversal | Conventional Commits (`refactor(<scope>): ...`) |
+| [Tether](tether.md) | Dependency Health & Package Hygiene | Upgrades safe minor/patch dependencies and prunes orphaned packages | `.jules/tether.md` | Manifest & Lockfile Outdated Inspection | Conventional Commits (`chore(deps): ...`) |
+| [Sentinel](sentinel.md) | Application Security & Hardening | Audits trust boundaries, prevents data leaks, and fixes vulnerabilities | `.jules/sentinel.md` | Filesystem LRU Directory Traversal | Conventional Commits (`fix(<scope>): ...`) |
+| [Palette](palette.md) | UI Resilience & Visual Consistency | Solves layout brittleness, viewport breakdown, and design token drift | `.jules/palette.md` | Filesystem LRU Directory Traversal | Conventional Commits (`style(<scope>): ...`) |
+| [Beacon](beacon.md) | Accessibility & Semantic UI | Eliminates inaccessible interactions, keyboard traps, and unlabeled controls | `.jules/beacon.md` | Filesystem LRU Directory Traversal | Conventional Commits (`fix(<scope>): ...`) |
+| [Polyglot](polyglot.md) | Internationalization & Translation | Extracts hardcoded UI text into localized translation catalogs | `.jules/polyglot.md` | Filesystem LRU Directory Traversal | Conventional Commits (`refactor(<scope>): ...`) |
+| [Vigil](vigil.md) | Observability & Error Resilience | Preserves error causes and eliminates silent swallowed exceptions | `.jules/vigil.md` | Filesystem LRU Directory Traversal | Conventional Commits (`fix(<scope>): ...`) |
+| [Conduit](conduit.md) | CI/CD & Pipeline Efficiency | Adds execution timeouts, build caching, and concurrency cancellation | `.jules/conduit.md` | Workflow & Pipeline Inspection | Conventional Commits (`ci(<workflow>): ...`) |
+| [Thrift](thrift.md) | Resource & Read Efficiency | Eliminates unneeded reads, optimizes caching, and bounds data queries | `.jules/thrift.md` | Filesystem LRU Directory Traversal | Conventional Commits (`perf(<scope>): ...`) |
+| [Mason](mason.md) | Architecture & Modular Cohesion | Extracts cohesive sub-domains into sibling modules without arbitrary line cutoffs | `.jules/mason.md` | Filesystem LRU Directory Traversal | Conventional Commits (`refactor(<scope>): ...`) |
+| [Herald](herald.md) | Repository Presentation & AI Context | GitHub community standards (README, Contributing, Sponsors) & lean AGENTS.md | `.jules/herald.md` | Root & .github/ Inspection | Conventional Commits (`docs(repo): ...`) |
+| [Cartographer](cartographer.md) | Codebase Topology & AST RepoMap | Generates high-density, signature-only outlines (90% token reduction) | `.jules/cartographer.md` | Filesystem LRU Directory Traversal | Conventional Commits (`docs(map): ...`) |
 
 ---
 
@@ -62,9 +62,9 @@ Modern agentic engineering eliminates lists of targets entirely. Instead, the ag
 │ 3. Axiomatic Evaluation (Zero-Anchor Questions)                        │
 │    Evaluates code using first-principles questions (e.g. Asymmetry).   │
 ├────────────────────────────────────────────────────────────────────────┤
-│ 4. Atomic Execution (< 50 LOC) & Deterministic Verification           │
+│ 4. Atomic Execution & Deterministic Verification                       │
 ├────────────────────────────────────────────────────────────────────────┤
-│ 5. Conventional Commits: <type>(<audited-directory>): <description>   │
+│ 5. Conventional Commits: <type>(<audited-directory>): <description>    │
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -77,7 +77,7 @@ Modern agentic engineering eliminates lists of targets entirely. Instead, the ag
 ### 2. Axiomatic Evaluative Questions (No Keyword Anchors)
 Instead of looking for specific syntax patterns, the agent asks first-principles questions about the code it encounters:
 - **For Scribe 📝 (Information Asymmetry):**
-  > *"Where does this implementation enforce constraints, handle error conditions, or produce side effects that are invisible or ambiguous to someone reading only the interface declaration?"*
+  > *"Where does this source file enforce constraints, lifecycle behaviors, error conditions, or public contracts that are invisible or ambiguous to someone reading only the interface declaration, and how can the entire file be fully documented to maximize understanding and eliminate guesswork?"*
 - **For Craftsman 🛠️ (Cognitive Simplicity):**
   > *"Where does this code exhibit structural convolution or unnecessary cognitive friction that can be simplified into clean, declarative code without altering external behavior?"*
 - **For Sentinel 🛡️ (Unverified Trust):**

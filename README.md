@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![Architecture: Zero-Anchor](https://img.shields.io/badge/Architecture-Zero--Anchor-green.svg)](#-the-solution-zero-anchor-structural-traversal)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](.github/CONTRIBUTING.md)
 
 A curated library of persona configurations for **Jules** (Google's asynchronous AI coding agent). Each role specializes in a discrete software development discipline, systematically traversing the entire codebase over time to execute atomic, high-impact improvements using strict **Conventional Commits**.
 
@@ -13,21 +13,21 @@ A curated library of persona configurations for **Jules** (Google's asynchronous
 
 | Role | Focus Area | Primary Objective | Journal Path | Traversal Strategy | Standard |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| [Scribe](scribe.md) | Full-File Source Code Specs | Fully documents entire source files with native docstrings (TSDoc/Google/Rustdoc) | `.jules/scribe.md` | Filesystem LRU Directory Traversal | Conventional Commits + TSDoc/Google Docstrings |
-| [Validator](validator.md) | QA & Full Test File Authoring | Authors full test files with mocks and eliminates hollow coverage across unasserted boundaries | `.jules/validator.md` | Filesystem LRU Directory Traversal | Conventional Commits (`test(<scope>): ...`) + AAA |
-| [Craftsman](craftsman.md) | Clean Code & Structural Refactoring | Reduces cognitive complexity and flattens nested branching across cohesive logical units | `.jules/craftsman.md` | Filesystem LRU Directory Traversal | Conventional Commits (`refactor(<scope>): ...`) |
-| [Prism](prism.md) | Type Safety & Contract Integrity | Eliminates `any`, type escapes, and loose interface definitions | `.jules/prism.md` | Filesystem LRU Directory Traversal | Conventional Commits (`refactor(<scope>): ...`) |
-| [Tether](tether.md) | Dependency Health & Package Hygiene | Upgrades safe minor/patch dependencies and prunes orphaned packages | `.jules/tether.md` | Manifest & Lockfile Outdated Inspection | Conventional Commits (`chore(deps): ...`) |
-| [Sentinel](sentinel.md) | Application Security & Hardening | Audits trust boundaries, prevents data leaks, and fixes vulnerabilities | `.jules/sentinel.md` | Filesystem LRU Directory Traversal | Conventional Commits (`fix(<scope>): ...`) |
-| [Palette](palette.md) | UI Resilience & Visual Consistency | Solves layout brittleness, viewport breakdown, and design token drift | `.jules/palette.md` | Filesystem LRU Directory Traversal | Conventional Commits (`style(<scope>): ...`) |
-| [Beacon](beacon.md) | Accessibility & Semantic UI | Eliminates inaccessible interactions, keyboard traps, and unlabeled controls | `.jules/beacon.md` | Filesystem LRU Directory Traversal | Conventional Commits (`fix(<scope>): ...`) |
-| [Polyglot](polyglot.md) | Internationalization & Translation | Extracts hardcoded UI text into localized translation catalogs | `.jules/polyglot.md` | Filesystem LRU Directory Traversal | Conventional Commits (`refactor(<scope>): ...`) |
-| [Vigil](vigil.md) | Observability & Error Resilience | Preserves error causes and eliminates silent swallowed exceptions | `.jules/vigil.md` | Filesystem LRU Directory Traversal | Conventional Commits (`fix(<scope>): ...`) |
-| [Conduit](conduit.md) | CI/CD & Pipeline Efficiency | Adds execution timeouts, build caching, and concurrency cancellation | `.jules/conduit.md` | Workflow & Pipeline Inspection | Conventional Commits (`ci(<workflow>): ...`) |
-| [Thrift](thrift.md) | Resource & Read Efficiency | Eliminates unneeded reads, optimizes caching, and bounds data queries | `.jules/thrift.md` | Filesystem LRU Directory Traversal | Conventional Commits (`perf(<scope>): ...`) |
-| [Mason](mason.md) | Architecture & Modular Cohesion | Extracts cohesive sub-domains into sibling modules without arbitrary line cutoffs | `.jules/mason.md` | Filesystem LRU Directory Traversal | Conventional Commits (`refactor(<scope>): ...`) |
-| [Herald](herald.md) | Repository Presentation & AI Context | GitHub community standards (README, Contributing, Sponsors) & lean AGENTS.md | `.jules/herald.md` | Root & .github/ Inspection | Conventional Commits (`docs(repo): ...`) |
-| [Cartographer](cartographer.md) | Codebase Topology & AST RepoMap | Generates high-density, signature-only outlines (90% token reduction) | `.jules/cartographer.md` | Filesystem LRU Directory Traversal | Conventional Commits (`docs(map): ...`) |
+| [Scribe](roles/scribe.md) | Full-File Source Code Specs | Fully documents entire source files with native docstrings (TSDoc/Google/Rustdoc) | `.jules/scribe.md` | Filesystem LRU Directory Traversal | Conventional Commits + TSDoc/Google Docstrings |
+| [Validator](roles/validator.md) | QA & Full Test File Authoring | Authors full test files with mocks and eliminates hollow coverage across unasserted boundaries | `.jules/validator.md` | Filesystem LRU Directory Traversal | Conventional Commits (`test(<scope>): ...`) + AAA |
+| [Craftsman](roles/craftsman.md) | Clean Code & Structural Refactoring | Reduces cognitive complexity and flattens nested branching across cohesive logical units | `.jules/craftsman.md` | Filesystem LRU Directory Traversal | Conventional Commits (`refactor(<scope>): ...`) |
+| [Prism](roles/prism.md) | Type Safety & Contract Integrity | Eliminates `any`, type escapes, and loose interface definitions | `.jules/prism.md` | Filesystem LRU Directory Traversal | Conventional Commits (`refactor(<scope>): ...`) |
+| [Tether](roles/tether.md) | Dependency Health & Package Hygiene | Upgrades safe minor/patch dependencies and prunes orphaned packages | `.jules/tether.md` | Manifest & Lockfile Outdated Inspection | Conventional Commits (`chore(deps): ...`) |
+| [Sentinel](roles/sentinel.md) | Application Security & Hardening | Audits trust boundaries, prevents data leaks, and fixes vulnerabilities | `.jules/sentinel.md` | Filesystem LRU Directory Traversal | Conventional Commits (`fix(<scope>): ...`) |
+| [Palette](roles/palette.md) | UI Resilience & Visual Consistency | Solves layout brittleness, viewport breakdown, and design token drift | `.jules/palette.md` | Filesystem LRU Directory Traversal | Conventional Commits (`style(<scope>): ...`) |
+| [Beacon](roles/beacon.md) | Accessibility & Semantic UI | Eliminates inaccessible interactions, keyboard traps, and unlabeled controls | `.jules/beacon.md` | Filesystem LRU Directory Traversal | Conventional Commits (`fix(<scope>): ...`) |
+| [Polyglot](roles/polyglot.md) | Internationalization & Translation | Extracts hardcoded UI text into localized translation catalogs | `.jules/polyglot.md` | Filesystem LRU Directory Traversal | Conventional Commits (`refactor(<scope>): ...`) |
+| [Vigil](roles/vigil.md) | Observability & Error Resilience | Preserves error causes and eliminates silent swallowed exceptions | `.jules/vigil.md` | Filesystem LRU Directory Traversal | Conventional Commits (`fix(<scope>): ...`) |
+| [Conduit](roles/conduit.md) | CI/CD & Pipeline Efficiency | Adds execution timeouts, build caching, and concurrency cancellation | `.jules/conduit.md` | Workflow & Pipeline Inspection | Conventional Commits (`ci(<workflow>): ...`) |
+| [Thrift](roles/thrift.md) | Resource & Read Efficiency | Eliminates unneeded reads, optimizes caching, and bounds data queries | `.jules/thrift.md` | Filesystem LRU Directory Traversal | Conventional Commits (`perf(<scope>): ...`) |
+| [Mason](roles/mason.md) | Architecture & Modular Cohesion | Extracts cohesive sub-domains into sibling modules without arbitrary line cutoffs | `.jules/mason.md` | Filesystem LRU Directory Traversal | Conventional Commits (`refactor(<scope>): ...`) |
+| [Herald](roles/herald.md) | Repository Presentation & AI Context | GitHub community standards (README, Contributing, Sponsors) & lean AGENTS.md | `.jules/herald.md` | Root & .github/ Inspection | Conventional Commits (`docs(repo): ...`) |
+| [Cartographer](roles/cartographer.md) | Codebase Topology & AST RepoMap | Generates high-density, signature-only outlines (90% token reduction) | `.jules/cartographer.md` | Filesystem LRU Directory Traversal | Conventional Commits (`docs(map): ...`) |
 
 ---
 
@@ -95,11 +95,11 @@ fix(middleware): assert header length boundaries before buffer allocation
 
 ## 🛠️ How to Create a New Role
 
-Use [`TEMPLATE.md`](TEMPLATE.md) as the starting blueprint:
+Use [`TEMPLATE.md`](roles/TEMPLATE.md) as the starting blueprint:
 
 1. **Copy the template:**
    ```bash
-   cp TEMPLATE.md roles/my-role.md
+   cp roles/TEMPLATE.md roles/my-role.md
    ```
 2. **Define Persona & Moniker:** Choose an evocative noun name and emoji.
 3. **Define the Core Evaluative Question:** Craft a single, rigorous first-principles question for your domain. **Do not include parenthetical lists of file types or patterns.**
@@ -114,9 +114,9 @@ While designed around Google Jules, these roles are model- and agent-agnostic. T
 | Tool / Environment | Drop-in Execution Method |
 | :--- | :--- |
 | **Google Jules** | Provide the role file as the task description / prompt for scheduled or on-demand runs. |
-| **Claude Code** | Run directly from the terminal:<br>`claude "Execute craftsman.md against this repository"` |
-| **Cursor (Composer / Agent)** | Add as a rule in `.cursor/rules/<role>.mdc` or prompt Composer:<br>`"Act as Scribe. Read .jules/scribe.md and execute your audit."` |
+| **Claude Code** | Run directly from the terminal:<br>`claude "Execute roles/craftsman.md against this repository"` |
+| **Cursor (Composer / Agent)** | Add as a rule in `.cursor/rules/<role>.mdc` or prompt Composer:<br>`"Act as Scribe. Read .jules/scribe.md and execute your audit from roles/scribe.md."` |
 | **GitHub Copilot** | Reference role instructions in `.github/copilot-instructions.md`. |
-| **Aider** | Run with the role file as system instructions:<br>`aider --message-file craftsman.md` |
+| **Aider** | Run with the role file as system instructions:<br>`aider --message-file roles/craftsman.md` |
 | **Scheduled CI (GitHub Actions)** | Run a nightly workflow using an agent CLI to produce an atomic, automated PR every morning. |
 

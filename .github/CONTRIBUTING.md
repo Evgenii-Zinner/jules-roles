@@ -19,37 +19,37 @@ When proposing changes, new agent roles, or tooling updates, adhere strictly to 
 ## 🛠️ Adding a New Role
 
 To create a new role:
-1. Copy [`TEMPLATE.md`](TEMPLATE.md) to your new role file:
+1. Copy [`roles/TEMPLATE.md`](../roles/TEMPLATE.md) to your new role file:
    ```bash
-   cp TEMPLATE.md your-role.md
+   cp roles/TEMPLATE.md roles/your-role.md
    ```
 2. Define a clear persona with a concise moniker and emoji.
 3. Formulate a single first-principles **Core Evaluative Question** with zero bulleted smell categories or parenthetical keywords.
 4. Define the journal path in `.jules/<your-role>.md` using Least-Recently-Visited (LRU) directory selection.
-5. Update [`README.md`](README.md) and [`AGENTS.md`](AGENTS.md) to include the new role.
+5. Update [`README.md`](../README.md) and [`AGENTS.md`](../AGENTS.md) to include the new role.
 
 ---
 
 ## 🐍 Working with Python Dispatcher Scripts
 
-This repository includes helper scripts to interact programmatically with the **Google Jules REST API (v1alpha)**:
+This repository includes helper scripts in `scripts/` to interact programmatically with the **Google Jules REST API (v1alpha)**:
 
-### 1. `jules_dispatch.py` (CLI Session Manager)
+### 1. `scripts/jules_dispatch.py` (CLI Session Manager)
 Provides command-line control over Jules sessions:
-- **List sessions:** `python3 jules_dispatch.py list`
-- **Inspect session:** `python3 jules_dispatch.py get <session_id>`
-- **Create session:** `python3 jules_dispatch.py create --prompt "Execute craftsman.md against auth module" --title "Refactor Auth"`
-- **View activity stream:** `python3 jules_dispatch.py activities <session_id>`
-- **Send follow-up message:** `python3 jules_dispatch.py message <session_id> --message "Please add unit tests"`
-- **Approve proposed plan:** `python3 jules_dispatch.py approve <session_id>`
-- **Delete session:** `python3 jules_dispatch.py delete <session_id>`
+- **List sessions:** `python3 scripts/jules_dispatch.py list`
+- **Inspect session:** `python3 scripts/jules_dispatch.py get <session_id>`
+- **Create session:** `python3 scripts/jules_dispatch.py create --prompt "Execute roles/craftsman.md against auth module" --title "Refactor Auth"`
+- **View activity stream:** `python3 scripts/jules_dispatch.py activities <session_id>`
+- **Send follow-up message:** `python3 scripts/jules_dispatch.py message <session_id> --message "Please add unit tests"`
+- **Approve proposed plan:** `python3 scripts/jules_dispatch.py approve <session_id>`
+- **Delete session:** `python3 scripts/jules_dispatch.py delete <session_id>`
 
-### 2. `dispatch_parallel_tasks.py` (Parallel Batch Dispatcher)
+### 2. `scripts/dispatch_parallel_tasks.py` (Parallel Batch Dispatcher)
 Dispatches batches of disjoint tasks to Jules concurrently:
 - Verifies zero file intersection across concurrent tasks to avoid merge conflicts.
-- Supports dry-run validation: `python3 dispatch_parallel_tasks.py --dry-run`
-- Dispatches specific task IDs: `python3 dispatch_parallel_tasks.py --task 1`
-- Automatically updates a local session registry (`tools/active_sessions.json`).
+- Supports dry-run validation: `python3 scripts/dispatch_parallel_tasks.py --dry-run`
+- Dispatches specific task IDs: `python3 scripts/dispatch_parallel_tasks.py --task 1`
+- Automatically updates a local session registry (`scripts/active_sessions.json`).
 
 ### 🔒 Script Security & Contribution Rules
 - **Authentication:** Authenticate using the `JULES_API_KEY` environment variable. A local `.jules_key` file in the repository root or parent directory is also supported and is strictly `.gitignore`d.

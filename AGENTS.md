@@ -17,31 +17,37 @@
 ```
 jules-roles/
 ├── README.md        # Public overview, role matrix, and architectural rationale
-├── CONTRIBUTING.md  # Contribution guidelines, Conventional Commits & tooling
 ├── LICENSE          # MIT open-source license
-├── SECURITY.md      # Vulnerability reporting protocol (security@ezinner.com)
-├── CODE_OF_CONDUCT.md # Contributor Covenant v2.1 standards
-├── TEMPLATE.md      # Universal Zero-Anchor blueprint for creating new roles
 ├── AGENTS.md        # High-density agent operational rules (this file)
 │
-├── jules_dispatch.py          # [tool] Jules REST API CLI session dispatcher
-├── dispatch_parallel_tasks.py # [tool] Concurrent batch task dispatcher (disjoint)
+├── .github/
+│   ├── CONTRIBUTING.md        # Contribution guidelines, Conventional Commits & tooling
+│   ├── CODE_OF_CONDUCT.md     # Contributor Covenant v2.1 standards
+│   ├── SECURITY.md            # Vulnerability reporting protocol (security@ezinner.com)
+│   ├── FUNDING.yml            # Sponsorship configuration
+│   └── PULL_REQUEST_TEMPLATE.md
 │
-├── scribe.md        # [docs] Source Code Specifications (TSDoc/Google docstrings on full files)
-├── validator.md     # [test] QA & Full Test File Authoring (AAA, mocks & boundary validation)
-├── craftsman.md     # [refactor] Clean Code & Structural Refactoring (Cognitive complexity, guard clauses)
-├── prism.md         # [refactor] Type System Safety (Strict typing, discriminated unions)
-├── mason.md         # [refactor] Architecture & Modular Cohesion (Cohesive sub-domain extraction, DRY/YAGNI/KISS)
-├── tether.md        # [chore] Dependency Health & Package Hygiene (Minor/patch upgrades)
-├── sentinel.md      # [fix] Application Security & Trust Boundaries (Defensive hardening)
-├── vigil.md         # [fix] Observability, Error Resilience & Diagnostic Telemetry
-├── palette.md       # [style] UI Layout Resilience & Design Token Alignment
-├── beacon.md        # [fix] Accessibility (a11y) & Semantic UI Interactions
-├── polyglot.md      # [refactor] Internationalization (i18n) & Translation Catalog
-├── conduit.md       # [ci] CI/CD, Workflows & Pipeline Efficiency
-├── thrift.md        # [perf] Edge Resource, Caching & Data Access Efficiency
-├── herald.md        # [docs] Repository Presentation, Community Standards, READMEs & AI Context
-├── cartographer.md  # [docs] Codebase Topology & AST RepoMap Skeletons
+├── scripts/
+│   ├── jules_dispatch.py          # [tool] Jules REST API CLI session dispatcher
+│   └── dispatch_parallel_tasks.py # [tool] Concurrent batch task dispatcher (disjoint)
+│
+├── roles/
+│   ├── TEMPLATE.md      # Universal Zero-Anchor blueprint for creating new roles
+│   ├── scribe.md        # [docs] Source Code Specifications (TSDoc/Google docstrings on full files)
+│   ├── validator.md     # [test] QA & Full Test File Authoring (AAA, mocks & boundary validation)
+│   ├── craftsman.md     # [refactor] Clean Code & Structural Refactoring (Cognitive complexity, guard clauses)
+│   ├── prism.md         # [refactor] Type System Safety (Strict typing, discriminated unions)
+│   ├── mason.md         # [refactor] Architecture & Modular Cohesion (Cohesive sub-domain extraction, DRY/YAGNI/KISS)
+│   ├── tether.md        # [chore] Dependency Health & Package Hygiene (Minor/patch upgrades)
+│   ├── sentinel.md      # [fix] Application Security & Trust Boundaries (Defensive hardening)
+│   ├── vigil.md         # [fix] Observability, Error Resilience & Diagnostic Telemetry
+│   ├── palette.md       # [style] UI Layout Resilience & Design Token Alignment
+│   ├── beacon.md        # [fix] Accessibility (a11y) & Semantic UI Interactions
+│   ├── polyglot.md      # [refactor] Internationalization (i18n) & Translation Catalog
+│   ├── conduit.md       # [ci] CI/CD, Workflows & Pipeline Efficiency
+│   ├── thrift.md        # [perf] Edge Resource, Caching & Data Access Efficiency
+│   ├── herald.md        # [docs] Repository Presentation, Community Standards, READMEs & AI Context
+│   └── cartographer.md  # [docs] Codebase Topology & AST RepoMap Skeletons
 │
 └── .jules/          # Persistent agent memory & Least-Recently-Visited rotation logs
 ```

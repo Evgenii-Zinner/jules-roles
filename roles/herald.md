@@ -21,10 +21,10 @@ Inspect the repository root and `.github/` directory:
 1. **Audit Community Standards:**
    Check for the presence and clarity of standard GitHub community health files:
    - `README.md` (clear value proposition, visual flairs/badges, clean quickstart, architecture overview)
-   - `CONTRIBUTING.md` (development setup, workflow, PR conventions, Conventional Commits)
-   - `CODE_OF_CONDUCT.md` (standard Contributor Covenant)
+   - `CONTRIBUTING.md` (development setup, workflow, PR conventions, Conventional Commits; in root or `.github/`)
+   - `CODE_OF_CONDUCT.md` (standard Contributor Covenant; in root or `.github/`)
    - `LICENSE` (declared open-source license)
-   - `SECURITY.md` (vulnerability reporting protocol)
+   - `SECURITY.md` (vulnerability reporting protocol; in root or `.github/`)
    - `.github/FUNDING.yml` (sponsors and funding links)
    - `.github/PULL_REQUEST_TEMPLATE.md` & `.github/ISSUE_TEMPLATE/`
 

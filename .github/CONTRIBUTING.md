@@ -44,12 +44,12 @@ Provides command-line control over Jules sessions:
 - **Approve proposed plan:** `python3 scripts/jules_dispatch.py approve <session_id>`
 - **Delete session:** `python3 scripts/jules_dispatch.py delete <session_id>`
 
-### 2. `scripts/dispatch_parallel_tasks.py` (Parallel Batch Dispatcher)
+### 2. `scripts/jules_dispatch_many.py` (Parallel Batch Dispatcher)
 Dispatches batches of disjoint tasks to Jules concurrently:
 - Verifies zero file intersection across concurrent tasks to avoid merge conflicts.
-- Supports dry-run validation: `python3 scripts/dispatch_parallel_tasks.py --dry-run`
-- Dispatches specific task IDs: `python3 scripts/dispatch_parallel_tasks.py --task 1`
-- Automatically updates a local session registry (`scripts/active_sessions.json`).
+- Supports dry-run validation: `python3 scripts/jules_dispatch_many.py --tasks scripts/tasks.example.json --dry-run`
+- Dispatches specific task IDs: `python3 scripts/jules_dispatch_many.py --tasks tasks.json --task 1`
+- Automatically updates a local session registry (`.jules/active_sessions.json`).
 
 ### 🔒 Script Security & Contribution Rules
 - **Authentication:** Authenticate using the `JULES_API_KEY` environment variable. A local `.jules_key` file in the repository root or parent directory is also supported and is strictly `.gitignore`d.

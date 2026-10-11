@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "refactor(auth): simplify session token verification",
+    "role": "Craftsman",
+    "target_files": [
+      "src/auth/token_verifier.ts"
+    ],
+    "test_files": [
+      "tests/auth/token_verifier.test.ts"
+    ],
+    "prompt": "You are Craftsman (see roles/craftsman.md). Flatten nested conditional branches in token_verifier.ts using guard clauses with 100% behavioral invariance."
+  },
+  {
+    "id": 2,
+    "title": "test(storage): author unit test suite for cache eviction",
+    "role": "Validator",
+    "target_files": [
+      "src/storage/cache_store.ts"
+    ],
+    "test_files": [
+      "tests/storage/cache_store.test.ts"
+    ],
+    "prompt": "You are Validator (see roles/validator.md). Author a complete test suite with mocks in tests/storage/cache_store.test.ts verifying LRU eviction and boundary conditions."
+  }
+]

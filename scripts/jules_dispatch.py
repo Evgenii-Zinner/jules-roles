@@ -1,22 +1,60 @@
 #!/usr/bin/env python3
 """
-Jules REST API Dispatcher & Session Manager for Sting Engine.
+Jules REST API Dispatcher & Session Manager.
 Provides programmatic control over Google Jules autonomous coding sessions.
 """
 
 import argparse
 import json
 import os
+import re
+import subprocess
 import sys
 import urllib.error
 import urllib.parse
 import urllib.request
 
 API_BASE = "https://jules.googleapis.com/v1alpha"
-DEFAULT_SOURCE = "sources/github/Evgenii-Zinner/Sting"
-DEFAULT_BRANCH = "main"
+
+
+def detect_git_repo_source() -> str | None:
+    """Auto-detects the Jules GitHub repository resource path from git config or environment."""
+    if os.environ.get("JULES_SOURCE"):
+        return os.environ["JULES_SOURCE"].strip()
+    try:
+        remote = subprocess.check_output(
+            ["git", "config", "--get", "remote.origin.url"],
+            stderr=subprocess.DEVNULL,
+            text=True,
+        ).strip()
+        match = re.search(r"github\.com[:/]([^/]+)/([^/.]+?)(?:\.git)?$", remote)
+        if match:
+            owner, repo = match.group(1), match.group(2)
+            return f"sources/github/{owner}/{repo}"
+    except Exception:
+        pass
+    return None
+
+
+def detect_git_branch() -> str:
+    """Auto-detects the current branch from git or environment."""
+    if os.environ.get("JULES_BRANCH"):
+        return os.environ["JULES_BRANCH"].strip()
+    try:
+        branch = subprocess.check_output(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            stderr=subprocess.DEVNULL,
+            text=True,
+        ).strip()
+        if branch and branch != "HEAD":
+            return branch
+    except Exception:
+        pass
+    return "main"
+
 
 def get_api_key() -> str:
+    """Retrieves Google Jules API key from environment or local key file."""
     if os.environ.get("JULES_API_KEY"):
         return os.environ["JULES_API_KEY"].strip()
     key_paths = [
@@ -29,7 +67,7 @@ def get_api_key() -> str:
                 k = f.read().strip()
                 if k:
                     return k
-    sys.stderr.write("Error: JULES_API_KEY environment variable or tools/.jules_key file not found.\n")
+    sys.stderr.write("Error: JULES_API_KEY environment variable or .jules_key file not found.\n")
     sys.exit(1)
 
 
@@ -91,12 +129,22 @@ def cmd_get(args: argparse.Namespace) -> None:
 
 
 def cmd_create(args: argparse.Namespace) -> None:
+    source = args.source or detect_git_repo_source()
+    if not source:
+        sys.stderr.write(
+            "Error: Could not auto-detect repository source. "
+            "Please pass --source 'sources/github/<owner>/<repo>' or set JULES_SOURCE.\n"
+        )
+        sys.exit(1)
+
+    branch = args.branch or detect_git_branch()
+
     payload = {
         "prompt": args.prompt,
         "sourceContext": {
-            "source": args.source,
+            "source": source,
             "githubRepoContext": {
-                "startingBranch": args.branch,
+                "startingBranch": branch,
             },
         },
         "automationMode": "AUTO_CREATE_PR" if args.auto_pr else "AUTOMATION_MODE_UNSPECIFIED",
@@ -139,7 +187,7 @@ def cmd_delete(args: argparse.Namespace) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Jules REST API CLI for Sting Engine")
+    parser = argparse.ArgumentParser(description="Jules REST API CLI session manager")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     # list
@@ -156,8 +204,16 @@ def main() -> None:
     p_create = subparsers.add_parser("create", help="Create a new task session")
     p_create.add_argument("--prompt", required=True, help="Task instructions for Jules")
     p_create.add_argument("--title", help="Optional title for the session")
-    p_create.add_argument("--source", default=DEFAULT_SOURCE, help=f"Source repo resource (default: {DEFAULT_SOURCE})")
-    p_create.add_argument("--branch", default=DEFAULT_BRANCH, help=f"Starting branch (default: {DEFAULT_BRANCH})")
+    p_create.add_argument(
+        "--source",
+        default=None,
+        help="Source repo resource (e.g. sources/github/<owner>/<repo>). Defaults to auto-detecting current git remote.",
+    )
+    p_create.add_argument(
+        "--branch",
+        default=None,
+        help="Starting branch. Defaults to auto-detecting current branch or 'main'.",
+    )
     p_create.add_argument("--auto-pr", action="store_true", default=True, help="Automatically create PR")
     p_create.add_argument("--require-plan-approval", action="store_true", default=False, help="Require explicit approval")
     p_create.set_defaults(func=cmd_create)

@@ -29,7 +29,7 @@ jules-roles/
 │
 ├── scripts/
 │   ├── jules_dispatch.py          # [tool] Jules REST API CLI session dispatcher
-│   └── dispatch_parallel_tasks.py # [tool] Concurrent batch task dispatcher (disjoint)
+│   └── jules_dispatch_many.py     # [tool] Concurrent batch task dispatcher (disjoint)
 │
 ├── roles/
 │   ├── TEMPLATE.md      # Universal Zero-Anchor blueprint for creating new roles

@@ -1,0 +1,30 @@
+# Logs & test artifacts
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Python caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Package manager lockfiles (prevent massive token crawl)
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+Cargo.lock
+poetry.lock
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+.vscode/
+.idea/
+
+# Local credentials
+.jules_key
+.env
+tools/active_sessions.json

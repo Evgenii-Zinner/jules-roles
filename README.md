@@ -28,6 +28,7 @@ A curated library of persona configurations for **Jules** (Google's asynchronous
 | [Mason](roles/mason.md) | Architecture & Modular Cohesion | Extracts cohesive sub-domains into sibling modules without arbitrary line cutoffs | `.jules/mason.md` | Filesystem LRU Directory Traversal | Conventional Commits (`refactor(<scope>): ...`) |
 | [Herald](roles/herald.md) | Repository Presentation & AI Context | GitHub community standards (README, Contributing, Sponsors) & lean AGENTS.md | `.jules/herald.md` | Root & .github/ Inspection | Conventional Commits (`docs(repo): ...`) |
 | [Cartographer](roles/cartographer.md) | Codebase Topology & AST RepoMap | Generates high-density, signature-only outlines (90% token reduction) | `.jules/cartographer.md` | Filesystem LRU Directory Traversal | Conventional Commits (`docs(map): ...`) |
+| [Nexus](roles/nexus.md) | Agent Interfaces & Machine Readability | Exposes token-efficient tool manifests, typed schemas, and structured agent context | `.jules/nexus.md` | Filesystem LRU Directory Traversal | Conventional Commits (`feat(<scope>): ...`) |
 
 ---
 

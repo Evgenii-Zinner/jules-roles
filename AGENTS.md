@@ -47,7 +47,8 @@ jules-roles/
 │   ├── conduit.md       # [ci] CI/CD, Workflows & Pipeline Efficiency
 │   ├── thrift.md        # [perf] Edge Resource, Caching & Data Access Efficiency
 │   ├── herald.md        # [docs] Repository Presentation, Community Standards, READMEs & AI Context
-│   └── cartographer.md  # [docs] Codebase Topology & AST RepoMap Skeletons
+│   ├── cartographer.md  # [docs] Codebase Topology & AST RepoMap Skeletons
+│   └── nexus.md         # [feat] Agent Interfaces, Machine-Readability & Tool Schemas (MCP, llms.txt, JSON Schema)
 │
 └── .jules/          # Persistent agent memory & Least-Recently-Visited rotation logs
 ```
